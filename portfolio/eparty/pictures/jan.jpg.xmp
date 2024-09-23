@@ -6,20 +6,20 @@
     xmlns:xmp="http://ns.adobe.com/xap/1.0/"
     xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
     xmlns:darktable="http://darktable.sf.net/"
-   exif:DateTimeOriginal="2024:09:23 06:12:58.000"
+   exif:DateTimeOriginal="2024:09:20 17:58:35.000"
    xmp:Rating="1"
-   xmpMM:DerivedFrom="inner2.jpg"
-   darktable:import_timestamp="63862669574035601"
-   darktable:change_timestamp="63862670498395948"
-   darktable:export_timestamp="63862670519191990"
+   xmpMM:DerivedFrom="jan.jpg"
+   darktable:import_timestamp="63862671334249887"
+   darktable:change_timestamp="63862671407563628"
+   darktable:export_timestamp="63862671409472325"
    darktable:print_timestamp="-1"
    darktable:xmp_version="5"
    darktable:raw_params="0"
    darktable:auto_presets_applied="1"
-   darktable:history_end="6"
+   darktable:history_end="5"
    darktable:iop_order_version="3"
    darktable:history_basic_hash="276b905b5a3ded4dea46110c7116222b"
-   darktable:history_current_hash="794910a96a734e498b15c9b954b4a0b8">
+   darktable:history_current_hash="e40b3f1b69c47fb12d53a283ce850101">
    <darktable:masks_history>
     <rdf:Seq/>
    </darktable:masks_history>
@@ -74,18 +74,7 @@
       darktable:operation="crop"
       darktable:enabled="1"
       darktable:modversion="1"
-      darktable:params="00000000000000000000803f0000803f0100000001000000"
-      darktable:multi_name=""
-      darktable:multi_name_hand_edited="0"
-      darktable:multi_priority="0"
-      darktable:blendop_version="13"
-      darktable:blendop_params="gz11eJxjYIAACQYYOOHEgAZY0QWAgBGLGANDgz0Ej1Q+dcF/IADRAGpyHQU="/>
-     <rdf:li
-      darktable:num="5"
-      darktable:operation="crop"
-      darktable:enabled="1"
-      darktable:modversion="1"
-      darktable:params="0000e03e000000000000803f0000803f0100000001000000"
+      darktable:params="f442af3e000000000000803fd5eb7f3f0100000001000000"
       darktable:multi_name=""
       darktable:multi_name_hand_edited="0"
       darktable:multi_priority="0"
