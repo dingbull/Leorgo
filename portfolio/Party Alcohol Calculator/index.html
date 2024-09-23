@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Alcohol Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .text-justify {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+
+    <!-- Container -->
+    <div id="app" class="container mx-auto p-4 space-y-8 max-w-4xl">
+        
+        <!-- Introduction and Input Section -->
+        <div class="w-full">
+            <h1 class="text-4xl font-bold mt-3 mb-7 text-center">Party Alcohol Calculator</h1>
+        </div>
+        <section class="bg-white p-6 rounded shadow flex flex-col md:flex-row">        
+
+            <div class="w-full md:w-1/2 p-4">
+                <img class="mb-4 rounded" src="image/main.jpg" alt="Party Image">
+                <p class="text-gray-600 mt-2 text-justify">
+                    Every time you throw a party, one of the most annoying things is figuring out how much alcohol to prepare.
+                </p>
+                <p class="text-justify">
+                    With over 10 years of party-hosting experience, I designed this "Party Alcohol Calculator"! Whether it's a large party or an intimate gathering, just input your number of guests, duration, and drinking preferences, and this app will calculate the required beer, wine, cocktails, and spirits at the click of a button!
+                </p>
+            </div>
+            <div class="md:w-1/2 p-4">
+                <form class="space-y-4" @submit.prevent="calculate">
+                    <div>
+                        <label class="block text-gray-700">Number of Guests</label>
+                        <input type="number" v-model="people" class="w-full border rounded p-2" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Party Duration</label>
+                        <select v-model="timeframe" class="w-full border rounded p-2" required>
+                            <option value="1">1 hour</option>
+                            <option value="2">2 hours</option>
+                            <option value="3">3 hours</option>
+                            <option value="4">4 hours</option>
+                            <option value="5">5 hours</option>
+                            <option value="6">6 hours</option>
+                            <option value="8">8 hours</option>
+                            <option value="10">10 hours</option>
+                            <option value="6">Whole day (11am - 5pm) (calculated as 6 hours)</option>
+                            <option value="6">All night (8pm - 2am) (calculated as 6 hours)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Drinking Level</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" v-model="drinkingLevel" value="1" required>
+                                <span class="ml-2">Low</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" v-model="drinkingLevel" value="2" required>
+                                <span class="ml-2">Medium</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" v-model="drinkingLevel" value="3" required>
+                                <span class="ml-2">High</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Calculate</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section class="bg-white p-6 rounded shadow" v-if="showResults">
+            <h2 class="text-xl font-bold mb-4">Calculation Results</h2>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr>
+                        <th class="text-left border p-2">Beer (20%)</th>
+                        <th class="text-left border p-2">Wine (25%)</th>
+                        <th class="text-left border p-2">Cocktail (25%)</th>
+                        <th class="text-left border p-2">Korean Soju (10%)</th>
+                        <th class="text-left border p-2">Spirits Shot (20%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border p-2">{{ beer }} cans (355ml each)</td>
+                        <td class="border p-2">{{ wine }} bottles (750ml each)</td>
+                        <td class="border p-2">
+                            Spirits {{ cocktailSpirits }} bottles (750ml each)<br>
+                            Mixer {{ cocktailMixer }} cans (355ml each)
+                        </td>
+                        <td class="border p-2">{{ soju }} bottles (330ml each)</td>
+                        <td class="border p-2">{{ shot }} bottles (750ml each)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="mt-4 text-justify">
+                The above alcohol proportions and their reasons:<br>
+                <strong>Beer:</strong> Accounts for 20% of the total. Beer is the soul of the party, suitable for most people, and easy to enjoy.<br>
+                <strong>Wine:</strong> Accounts for 25%. These choices are more elegant, suitable for casual conversations.<br>
+                <strong>Simple Cocktails:</strong> Also accounts for 25%. Examples include Gin Tonic or Whiskey Coke. Each glass is recommended to be mixed with 1 part spirits (Gin/Whiskey/Rum/Vodka...) + 3 parts Mixer (Tonic Water/Coke/Soda Water...), such as 44 ml Gin + 133 ml Tonic Water. Simple to make, a party essential.<br>
+                <strong>Korean Soju:</strong> Accounts for 10%. Many Asians love Korean Soju. Additionally, its cap can be used for party games (everyone takes turns flicking it, and the one who breaks it drinks).<br>
+                <strong>Spirits Shot:</strong> Accounts for 20%. Shots are suitable for when the party atmosphere is high, quickly drinking shots to boost the atmosphere.
+            </p>
+            <p class="text-gray-600 mt-2 text-justify">
+                You can choose the types of alcohol according to your preferences in each category.<br>
+                As for the drinking level settings, we calculate based on an average of 1 drink per hour (for light drinkers), 2 drinks (for medium drinkers), and 3 drinks (for heavy drinkers).<br>
+                Hope your party is a success!
+            </p>
+        </section>
+
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    people: 10,
+                    timeframe: 6,
+                    drinkingLevel: 2,
+                    beer: 0,
+                    wine: 0,
+                    cocktailSpirits: 0,
+                    cocktailMixer: 0,
+                    soju: 0,
+                    shot: 0,
+                    showResults: false,
+                };
+            },
+            methods: {
+                calculate() {
+                    const totalDrinks = this.people * this.timeframe * this.drinkingLevel;
+                    this.beer = Math.ceil(totalDrinks * 0.2);
+                    this.wine = Math.ceil(totalDrinks * 0.25 / 6);
+                    this.cocktailSpirits = Math.ceil(totalDrinks * 0.25 / 7);
+                    this.cocktailMixer = Math.ceil(totalDrinks * 0.25 / 2.5);
+                    this.soju = Math.ceil(totalDrinks * 0.1);
+                    this.shot = Math.ceil(totalDrinks * 0.2 / 7);
+                    this.showResults = true;
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+
+</body>
+</html>

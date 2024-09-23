@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>開Party酒精計算器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200">
+
+    <!-- Container -->
+    <div class="container mx-auto p-4 space-y-8 max-w-3x1">
+
+        <!-- Title Section -->
+        <section class="bg-white p-6 rounded shadow">
+            <h1 class="text-4xl font-bold mt-3 mb-7 text-center">開Party酒精計算器</h1>
+            <img class="mb-4 rounded" src="image/main.jpg"
+            <p class="text-gray-600 mt-2">
+                每次搞Party，其中一項最煩人的，就是要預備多少酒？
+            </p>
+            <p>
+                我有超過10年，開Party的經驗。今天設計了這個「開Party酒精計算器」！
+                無論係大型派對定係親密聚會，只需要輸入你嘅派對人數、時間同大家嘅飲酒偏好，呢個App就能夠一鍵計算出所需嘅啤酒、紅白酒、雞尾酒及烈酒等等!
+            </p>
+        </section>
+
+        <!-- Input Section -->
+        <section class="bg-white p-6 rounded shadow">
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-gray-700">Party 人數</label>
+                    <input type="number" class="w-full border rounded p-2" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Party 時間</label>
+                    <select class="w-full border rounded p-2" required>
+                        <option>1小時</option>
+                        <option>2小時</option>
+                        <option>3小時</option>
+                        <option>4小時</option>
+                        <option>5小時</option>
+                        <option>6小時</option>
+                        <option>8小時</option>
+                        <option>10小時</option>
+                        <option>整天（11am - 5pm）(以6小時計算)</option>
+                        <option>整晚（8pm - 2am）(以6小時計算)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700">酒量</label>
+                    <div class="flex space-x-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="drinking_level" value="low" required>
+                            <span class="ml-2">低</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="drinking_level" value="medium" required>
+                            <span class="ml-2">中</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="drinking_level" value="high" required>
+                            <span class="ml-2">高</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="w-full bg-blue-500 text-white py-2 rounded">立即計算</button>
+            </form>
+        </section>
+
+        <!-- Result Section -->
+        <section class="bg-white p-6 rounded shadow">
+            <h2 class="text-xl font-bold mb-4">計算結果</h2>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr>
+                        <th class="text-left border p-2">啤酒 (20%)</th>
+                        <th class="text-left border p-2">紅白酒 (25%)</th>
+                        <th class="text-left border p-2">雞尾酒 (25%)</th>
+                        <th class="text-left border p-2">Korean Soju (10%)</th>
+                        <th class="text-left border p-2">烈酒Shot (20%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border p-2">x罐（每罐355ml）</td>
+                        <td class="border p-2">x支（每支750ml）</td>
+                        <td class="border p-2">烈酒（Gin/Whiskey/Rum/Vodka…）x支（每支750ml)<br> Mixer（Tonic Water/Coke/Soda Water…）x支（每罐355ml）</td>
+                        <td class="border p-2">x支（每支330ml）</td>
+                        <td class="border p-2">x支（每支750ml）</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="mt-4">
+                以上酒精比例及其原因：<br>
+                <strong>啤酒：</strong>佔總量的20%。啤酒是派對的靈魂，適合大多數人，易於享用。
+                <strong>紅白酒：</strong>佔25%。這些選擇較為優雅，適合輕鬆交談時品嚐。
+                <strong>簡單雞尾酒：</strong>同樣佔25%。例如Gin Tonic或Whiskey Coke等。每杯建議以1份烈酒(Gin/Whiskey/Rum/Vodka...)＋3份Mixer(Tonic Water/Coke/Soda Water...)的分量去調, 例如44 ml Gin ＋ 133ml Tonic Water。簡單好調，派對必備。
+                <strong>Korean Soju：</strong>佔10%。亞洲人都很喜歡Korean Soju。而且它的蓋是可以用來玩Party遊戲（輪著每人彈一下，彈斷了便要飲）
+                <strong>烈酒Shot：</strong>佔20%。Shot適合Party氣氛高漲時，快速飲Shot，帶動現場氣氛。
+            </p>
+            <p class="text-gray-600 mt-2">
+                你可以在每一個類別，跟據自己的喜好，選擇例子中的酒類。
+                至於酒量的設定，我哋基於人均每小時1杯（輕量飲酒者）、2杯（中等飲酒者）到3杯（重量飲酒者）去計算。
+                希望你的Party 搞得成功！
+            </p>
+        </section>
+
+    </div>
+
+</body>
+</html>
