@@ -11,7 +11,7 @@ nav li{
 	    margin: 0 13px;
 }
 #intro .jumbotron{
-	background: url('../pictures/mainbg.png');
+	background: url('../pictures/inner9.jpg');
 	background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -277,7 +277,9 @@ footer ul{
 	padding-bottom: 80px;
 }
 	
-
+.justify-text {
+	text-align: justify;
+  }
 
 
 @media only screen and (max-width: 768px) {
