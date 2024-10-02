@@ -1,2 +1,0 @@
-# Leorgo
-Gorgo and Leonidas 
