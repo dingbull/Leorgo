@@ -145,39 +145,67 @@
 
         
         <div class="main-container">
-            <section class="switchable feature-large bg--secondary">
+
+            <section>
                 <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-md-6 col-12">
-                            <div class="image-cover border--round box-shadow-wide">
-                                <div class="background-image-holder" style="background: url('img/photo.png'); opacity: 1;">
-                                    <img alt="image" src="img/photo.png" width="150" height="auto">
-
-                                </div>
-                            </div>
-                            <!--end image cover-->
-                        </div>
-                    
-                        <div class="col-md-6 col-lg-5">
-                            <div class="switchable__text">
-                                <h2>About Me</h2>
-                                <p class="lead" style="text-align: justify;">
-                                    Hi, I’m Rolan Yiu Mo Ho, a passionate software developer with a recent diploma in Software Development from SAIT. I thrive on turning ideas into reality through innovative, functional digital solutions. My approach to development is rooted in creativity and a strong desire to solve real-world problems through technology.
-                                    <br><br>
-                                    I’m always driven by the opportunity to learn and grow, and I’m constantly exploring new technologies and pushing the boundaries of what’s possible. From conceptualizing projects to bringing them to life, I find joy in every step of the development process.
-                                    <br><br>
-                                    Outside of work, you can find me cycling around Calgary or diving into personal tech projects that spark my creativity. I’m excited about new opportunities to collaborate with like-minded teams and individuals who share my vision of creating impactful digital experiences.
-
-Let’s connect and create something amazing together!
-                                </p>
-                            </div>
+                    <div class="row">
+                       
+                        <div class="col-md-12">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80173.37741798142!2d-114.21086974276828!3d51.10074672265826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716f9268a69e81%3A0xb1db5e68bd61e28!2sSouthern%20Alberta%20Institute%20of%20Technology!5e0!3m2!1sen!2sca!4v1728284830258!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                     <!--end of row-->
                 </div>
                 <!--end of container-->
             </section>
-            
+
+
+            <section class="switchable bg--secondary">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-md-5">
+                            <img alt="Image" class="border--round box-shadow-wide" src="img/sait.png">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row mx-0 switchable__text flex-column">
+                                <p class="lead">
+                                    Email:
+                                    <a href="mailto:wanyarolan@hotail.com">wanyarolan@hotail.com</a>
+                                    <br> Phone: +1 825 945 4180
+                                </p>
+                                <p class="lead">
+                                    Give me a call or drop by anytime, I endeavour to answer all enquiries within 24 hours.
+                                </p>
+
+
+                                <form action="mailto:wanyarolan@hotmail.com" method="POST" enctype="text/plain">
+                                    <div class="col-md-6">
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Your Name:</label>
+                                        <input type="text" name="name" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Your Email:</label>
+                                        <input type="email" name="email" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Message:</label>
+                                        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                                    </div>                                   
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--end of row-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
             <footer class="footer-3 text-center-xs space--xs bg--white ">
                 <div class="container">
                     <div class="row">
@@ -215,6 +243,14 @@ Let’s connect and create something amazing together!
                                     </a>
                                 </li>
                             </ul>
+                        </div>
+                        
+                        <div class="col-md-4 text-right text-center-xs">
+                            <span class="type--fine-print">&copy;
+                                <span class="update-year"></span> ALL RIGHT RESERVED</span>
+                                <span></span> </span>
+
+
                         </div>
 
                     </div>
