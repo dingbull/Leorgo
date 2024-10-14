@@ -2517,6 +2517,7 @@ iframe {
   top: 0;
   z-index: 0 !important;
   left: 0;
+
 }
 @media all and (max-width: 1024px) {
   .videobg .background-image-holder,
@@ -4023,6 +4024,14 @@ section.text-center div[class*='col-']:first-child:last-child {
   html {
     font-size: 80%;
   }
+  #background-video {
+    display: block; /* Ensure the video stays visible */
+    width: 100%; /* Make sure the video resizes to fit */
+    height: auto;
+    object-fit: cover;
+}
+
+
 }
 h1,
 .h1 {
@@ -9288,8 +9297,8 @@ footer.footer-5 .row [class*='col-'] > div:nth-last-child(2) .type--fine-print {
 }
 footer.footer-6 .footer__lower {
   background: #fafafa;
-  margin-top: 0em;
-  padding: 1em 0;
+  margin-top: 1.85714286em;
+  padding: 1.85714286em 0;
 }
 footer.footer-6.bg--dark .footer__lower {
   background: #181818;

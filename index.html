@@ -144,8 +144,8 @@
 
             <section class="imagebg videobg height-60 text-center" data-overlay="4">	
                 
-                <video autoplay loop muted playsinline poster="img/fallback.jpg" id="background-video">
-                    <source src="video/1.webm" type="video/webm">                              
+                <video id="background-video" autoplay loop muted playsinline poster="img/fallback.jpg">
+                    <source src="video/1.webm" type="video/webm">                             
                 </video>		
                 
                 <div class="container pos-vertical-center">
@@ -323,11 +323,31 @@
                 </div>
                 <!--end of container-->
             </footer>
+
         </div>
         <!--<div class="loader"></div>-->
         <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
             <i class="stack-interface stack-up-open-big"></i>
         </a>
+
+        <script>
+            const videos = ['video/1.webm']; // Add multiple videos here if needed
+            const videoElement = document.getElementById('background-video');
+            let currentVideoIndex = 0;
+
+            function playNextVideo() {
+                videoElement.src = videos[currentVideoIndex];
+                videoElement.play();
+                currentVideoIndex = (currentVideoIndex + 1) % videos.length;  // Move to next video, loop
+            }
+
+            videoElement.addEventListener('ended', playNextVideo);
+            playNextVideo();
+        </script>
+
+
+
+
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/typed.min.js"></script>
         <script src="js/isotope.min.js"></script>
