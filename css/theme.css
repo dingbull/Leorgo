@@ -4026,8 +4026,8 @@ section.text-center div[class*='col-']:first-child:last-child {
   }
   #background-video {
     display: block; /* Ensure the video stays visible */
-    width: 100%; /* Make sure the video resizes to fit */
-    height: auto;
+    width: auto; /* Make sure the video resizes to fit */
+    height: 100%;
     object-fit: cover;
 }
 
